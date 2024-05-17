@@ -2,10 +2,11 @@
 ###############################################################################################################################################################
 building and training the model for aksharantar/telugu dataset(start, end, pad tokens: <,>,? respectiveley): 
 
-DL_A3 consist of two files
+DL_A3 consist of 3 sets files
 
 I. cs23m005-a3.ipynb, cs23m005-a3.py : without attention model
 II. cs23m005-a3-attn.ipynb, cs23m005-a3-attn.py : with attention model
+III. /prediction_attention/prediction_report.csv : contains the predicted output for the test data
 
 ###############################################################################################################################################################
 I. without attention: cs23m005-a3.py
