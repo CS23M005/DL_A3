@@ -1,5 +1,5 @@
 # DL_A3
-###############################################################################################################################################################
+#####################################################################################################################
 building and training the model for aksharantar/telugu dataset(start, end, pad tokens: <,>,? respectiveley): 
 
 DL_A3 consist of 3 sets files
@@ -8,7 +8,7 @@ I. cs23m005-a3.ipynb, cs23m005-a3.py : without attention model
 II. cs23m005-a3-attn.ipynb, cs23m005-a3-attn.py : with attention model
 III. /prediction_attention/prediction_report.csv : contains the predicted output for the test data
 
-###############################################################################################################################################################
+#####################################################################################################################
 I. without attention: cs23m005-a3.py
 
 run cs23m005-a3.py with the optinal arguments by using the wandb API key.
@@ -16,15 +16,25 @@ run cs23m005-a3.py with the optinal arguments by using the wandb API key.
 arguments are as follows
 
 '-wp', '--wandb_project', type=str, default="Assignment3", help="wandb project name"
+
 '-opt', '--optimizer', type=str, default="nadam", choices = ['adam','nadam'], help="optimizer for backprop"
+
 '-bS', '--batch_size', type=int, default=32, choices = [32, 64, 128, 256], help="batch size"
+
 '-nE', '--num_epochs', type=int, default=25, choices = [5, 10], help="number of epochs"
+
 '-lR', '--learning_rate', type=float, default=1e-3, choices = [1e-3, 1e-4], help="learning rate"
+
 '-hS', '--hidden_size', type=int, default=128, choices = [32, 64, 128, 256], help="hidden size"
+
 '-eS', '--embedding_size', type=int, default=256, choices = [32, 64, 128, 256], help="embedding size"
+
 '-nL', '--num_layers', type=int, default=3, choices = [1,2,3,4,5], help="number of layers"
+
 '-cell', '--cell_type', type=str, default="LSTM", choices = ['LSTM', 'GRU', 'RNN'], help="cell type"
+
 '-dr', '--dropout_in', type=float, default=0.2, choices = [0,0.2,0.3,0.5], help="drop out"
+
 
 This initiates a call to train() which will build the seq2seq model and train it as per the requirement, this will produce validation and test accuracy and logs it in wandb CS23M005/Assignment3.
 
@@ -115,7 +125,7 @@ This function has default values in which case if user does not provide argument
    - Teacher forcing is a technique where instead of using the decoder's output from the previous time step as input for the next time step, the ground truth target token is used.
    - The `forward` method implements teacher forcing with a specified probability (`teacher_forcing_ratio`).
 
-###############################################################################################################################################################
+#####################################################################################################################
 
 II. with attention: cs23m005-a3-attn.py:
 This is same as cs23m005-a3.py. follow the same steps as mentioned above. The difference between with attention and without attention is highlighted below
@@ -144,5 +154,5 @@ attention calculation is the main difference. This is done after the encoder mod
 5. **Updated Forward Pass**:
    - During the forward pass of the `Seq2Seq` model, attention weights are computed and stored for each time step.
    - This enables the model to capture the alignment between input and output sequences, aiding in tasks such as machine translation or text summarization.
-###############################################################################################################################################################
+   ######################################################################################################################
    
